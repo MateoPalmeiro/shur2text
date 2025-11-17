@@ -1,0 +1,24 @@
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Node modules (if any dependencies are added in the future)
+node_modules/
+package-lock.json
+
+# Build artifacts (if build process is added)
+dist/
+build/
+
+# Test coverage (if tests are added)
+coverage/
+.nyc_output/
