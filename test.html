@@ -45,21 +45,42 @@
         <p>Esta es una página de prueba para el UserScript Shur2Text. Simula un formulario de respuesta rápida de Forocoches.</p>
         
         <h2>Respuesta Rápida (Simulada)</h2>
-        <textarea name="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <textarea name="message" id="vB_Editor_QR_textarea" placeholder="Escribe tu mensaje aquí..."></textarea>
         
         <div class="info">
             <strong>ℹ️ Instrucciones:</strong>
             <ol>
-                <li>Instala el UserScript shur2text.user.js en tu gestor de userscripts</li>
+                <li>Instala el UserScript shur2text.user.js en tu gestor de userscripts (Tampermonkey, Violentmonkey, etc.)</li>
                 <li>Recarga esta página</li>
-                <li>Deberías ver un popup flotante "Shur2Text - BBCode Helper"</li>
-                <li>Escribe texto en el popup y aplica formatos BBCode</li>
-                <li>Usa el botón "Insertar" para añadir el código al área de texto de arriba</li>
+                <li>Deberías ver un popup flotante "shur2text - Forocoches Text Helper"</li>
+                <li>El popup tiene dos modos de edición:
+                    <ul>
+                        <li><strong>[T] Modo Técnico (BBCode)</strong>: Editor de texto plano con botones BBCode y transformaciones de texto</li>
+                        <li><strong>[V] Modo Visual (WYSIWYG)</strong>: Editor visual con formateo en tiempo real</li>
+                    </ul>
+                </li>
+                <li>En Modo Técnico, puedes activar la <strong>Vista Previa</strong> haciendo clic en el botón <code>[&lt;&gt;]</code> para ver cómo se renderizará el BBCode</li>
+                <li>Escribe y formatea tu texto usando los botones de la barra de herramientas</li>
+                <li>Usa el botón <strong>"Copiar"</strong> para copiar el BBCode al portapapeles o <strong>"Insertar"</strong> para añadirlo al área de texto de arriba</li>
+                <li>El popup es <strong>arrastrable</strong> (arrastra desde el título) y <strong>minimizable</strong> (botón <code>[_]</code>)</li>
+                <li>La posición, estado de minimizado y modo seleccionado se recuerdan entre sesiones usando localStorage</li>
             </ol>
+        </div>
+
+        <div class="info" style="margin-top: 10px; background: #e8f5e9; border-left-color: #4caf50;">
+            <strong>✨ Características Principales:</strong>
+            <ul>
+                <li><strong>Modo Técnico</strong>: Soporte completo para BBCode de Forocoches (negrita, cursiva, subrayado, tachado, cita, código, spoiler, listas, enlaces, colores, tamaños, alineaciones)</li>
+                <li><strong>Modo Visual</strong>: Editor WYSIWYG con conversión automática a BBCode</li>
+                <li><strong>Vista Previa en Vivo</strong>: Panel lateral que renderiza el BBCode en tiempo real (solo en Modo Técnico)</li>
+                <li><strong>Transformaciones de Texto</strong>: Mayúsculas, minúsculas, alternancia de mayúsculas/minúsculas</li>
+                <li><strong>Selector de Color</strong>: Paleta de colores con muestras predefinidas y selector personalizado</li>
+                <li><strong>Persistencia</strong>: Posición, estado y preferencias guardadas automáticamente</li>
+            </ul>
         </div>
         
         <div class="info" style="margin-top: 10px; background: #fff3cd; border-left-color: #ff9800;">
-            <strong>⚠️ Nota:</strong> Esta es solo una página de prueba local. El script está diseñado para funcionar en forocoches.com y www.forocoches.com
+            <strong>⚠️ Nota:</strong> Esta es solo una página de prueba local. El script está diseñado para funcionar en <code>https://forocoches.com/foro/*</code>. En esta página de prueba, el textarea debe tener <code>id="vB_Editor_QR_textarea"</code> o <code>name="message"</code> para que la función "Insertar" funcione correctamente.
         </div>
     </div>
 </body>
