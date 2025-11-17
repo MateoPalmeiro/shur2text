@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         shur2text - Forocoches Text Helper
 // @namespace    https://github.com/MateoPalmeiro/shur2text
-// @version      0.4.9
+// @version      0.4.10
 // @description  Popup flotante con editor de texto para Forocoches: Modo Técnico (BBCode) y Modo Visual (WYSIWYG). Movible, minimizable y con posicion recordada.
 // @author       MateoPalmeiro
 // @match        https://forocoches.com/foro/showthread.php*
