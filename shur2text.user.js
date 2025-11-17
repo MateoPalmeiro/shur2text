@@ -4,7 +4,9 @@
 // @version      0.4.9
 // @description  Popup flotante con editor de texto para Forocoches: Modo Técnico (BBCode) y Modo Visual (WYSIWYG). Movible, minimizable y con posicion recordada.
 // @author       MateoPalmeiro
-// @match        https://forocoches.com/foro/*
+// @match        https://forocoches.com/foro/showthread.php*
+// @match        https://forocoches.com/foro/newreply.php*
+// @match        https://bbcode.ilma.dev/*
 // @run-at       document-end
 // @noframes
 // @license      AGPL-3.0-or-later
