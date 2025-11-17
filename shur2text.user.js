@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         shur2text - Forocoches Helper
 // @namespace    https://github.com/MateoPalmeiro/shur2text
-// @version      0.0.2
+// @version      0.0.3
 // @description  Popup flotante con editor de texto para Forocoches: BBCode, movible, minimizable y con posicion recordada.
 // @author       MateoPalmeiro
 // @match        https://forocoches.com/foro/*
@@ -302,6 +302,27 @@
         function fnUpper(t)     { return t.toUpperCase(); }
         function fnLower(t)     { return t.toLowerCase(); }
 
+        // Mayuscula/minuscula alternas: MaYuScUlA mInUsCuLa...
+        function fnAlternating(t) {
+            var res = '';
+            var useUpper = true;
+
+            for (var i = 0; i < t.length; i++) {
+                var ch = t.charAt(i);
+
+                // Solo alterno en letras, el resto lo dejo igual
+                if (/[a-záéíóúüñ]/i.test(ch)) {
+                    res += useUpper ? ch.toUpperCase() : ch.toLowerCase();
+                    useUpper = !useUpper;
+                } else {
+                    res += ch;
+                }
+            }
+
+            return res;
+        }
+
+        
         // Color personalizado
         function fnColor(t) {
             var color = prompt('Color (nombre o hex, ej: red o #ff0000):', 'red');
@@ -374,6 +395,7 @@
 
         createToolButton('MAY', 'Convertir a MAYUSCULAS',  fnUpper);
         createToolButton('min', 'Convertir a minusculas',  fnLower);
+        createToolButton('aA',  'Alternar mayus/minus',    fnAlternating);
 
         createToolButton('Raw', 'Sin formato (copiar tal cual)', fnNoFormat);
 
